@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
 
     mkfifo(PIPE_NAME, 0644);
     printf("Criei FIFO... \n");
-    fd = open(PIPE_NAME, O_RDONLY);
+    fd = open(PIPE_NAME, O_RDWR);
     printf("Abri FIFO (READ)... \n");
     do{
         nbytes = read(fd, str, sizeof(str) -1);
